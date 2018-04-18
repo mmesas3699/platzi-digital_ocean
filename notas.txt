@@ -1,0 +1,126 @@
+INTRODUCCION AL CURSO DE DIGITAL OCEAN
+	
+	DigitalOcean: Es un proveedor de computación en la nube que nos ofrece poder
+		desplegar aplicaciones en servidores linux directamente desde un dashboard 
+		o tambien puede ser desde una API. Se caracteriza por sus precios economicos
+		y estar diseñado 100% para desarrolladores.
+
+		Ofrece el servicio de:
+
+		- 'Block storage': Permite agregar almacenamiento al que viene por defecto
+			en el droplet
+
+		- Object storage: Funciona como dropbox, nos permite guardar archivos a los
+			que podemos acceder o compartir luego mediante una peticion http.
+
+		- Team and works: Permite crear una cuenta para empresas y desde esta crear
+			diferentes usuarios con diferentes permisos para que puedan, por ejemplo:
+				Crear droplets,
+				Administrar droplets, 
+				etc...
+
+		- Load balancing as a service: 
+
+
+REGISTRO EN DIGITAL OCEAN
+	
+
+SERVICIOS DE DIGITAL OCEAN: DROPLETS
+
+	droplet = Maquina virtual
+	** Es posible crear droplets desde curl o desde cualquier lenguaje de programación.
+		Hay que leer la documentación.
+
+	** DigitalOcean usa KVM para montar las maquinas virtuales.
+
+	** Hay 3 tipos de droplets: 
+		1. Standard: Los droplets de proposito general.
+		2. Specialized droplets: permite configurar el droplet en caso de necesitar
+			más cpu que memoria o al viceversa.
+
+			Para este caso es importante saber:
+				1 vCPU (virtual cpu): quiere decir que si en una maquina fisica hay un procesador
+				de 8 nucleos 1 solo de esos nucleos es el que se asigna a mi
+				droplet, los otros se asignan a otros droplets.
+		3. 
+
+SERVICIOS DE DIGITAL OCEAN: BLOCK STORAGE
+	
+	Block storage: Permite tener un disco duro ssd externo al que tiene interno el droplet
+
+	Es altamente disponible: replican la información para que este disponible siempre
+
+	Es posible escalar el volumen en vivo, sin tener que apagar el droplet
+
+
+SERVICIOS DE DIGITAL OCEAN: SPACES o OBJECTS STORAGE
+	
+	Tiene almacenamiento ilimitado, osea que no tendo que predefinir una capacidad al crearlo.
+
+	Es mas bataro que blockstorage ($0.02/GB), ya que cobran por los datos que tenga alamacenados:
+		Si el 1 mes tengo 2GB son $0.04 y si al mes 2 tengo 1GB serian $0.02
+
+	** Tiene 1TB de descarga de informacion (outbound transfer) si me paso me cobran
+	a $0.01/GB adicional.
+
+	El API es compatible son S3 de amazon, osea que puedo migrar de spaces a S3
+
+
+PANEL DE CONTROL DE DIGITALOCEAN
+	
+
+CREACION DE DROPLET
+	
+
+PANEL DE CONTROL DE UN DROPLET: GRAFICAS
+	
+	Bandwidth: Cuanto trafico esta manejando
+	CPU: Porcentaje de CPU que se esta utilizando
+	Disk I/O: La cantidad de lectura o escritura que hacen nuestras aplicaciones
+		o procesos en el disco duro de nuestro servidor.
+
+	Cuando tenemos seleccionada la opción de monitoreo, tendremos dos gráficas adicionales:
+
+	Memoria: La cantidad de memoria que estamos consumiendo a nivel de porcentaje.
+	Uso de disco: El porcentaje de disco que está se está consumiendo dentro de nuestro servidor.
+
+
+PANEL DE CONTROL DE UN DROPLET: ACCESO
+	
+	En la parte de Acceso podemos:
+		- Acceder al servidor mediante una consola via web, no es recomendable
+			hacer esto pues el acceso es mediante usuario y contraseña y esto
+			puede comprometer la seguridad del sistema.
+
+		- Resetear el password de root, al hacer uso de esta opción se deshabilita el
+			acceso con llave por ssh.
+
+PANEL DE CONTROL DE UN DROPLET: POWER
+	
+	Power Off - Apagar la instancia de modo forzado y puede causar corrupción de datos
+	Power Cycle - Reiniciar la instancia de modo forzado tambien puede causar corrupción de datos
+
+	En ambos casos se recomienda su uso solo si no se tiene acceso a la linea de
+	comandos o se tienen problemas para apagar o reiniciar el droplet.
+
+
+PANEL DE CONTROL DE UN DROPLET: VOLUMES
+	
+	- add volume: añadir un block storage a nuestro Droplet.
+	- Detach: Desmontar el volumen y poderlo usar en otro droplet.
+	- "config" para configurar este volumen
+
+
+PANEL DE CONTROL DE UN DROPLET: CONFIGURAR VOLUMENES
+	
+	En la opcion 'more' del volumen esta la opcion configuración, hay que seguir los pasos, ojo con formatera discos que contengan información.
+
+
+Panel de control de un droplet: Escalar un droplet
+	
+	Escalamiento vertical = Consiste en agregar más recursos existentes del servidor.
+
+	** Apagar un droplet:
+		1. Conectarse por ssh
+		2. $ porweroff
+
