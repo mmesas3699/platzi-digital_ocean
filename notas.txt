@@ -124,3 +124,44 @@ Panel de control de un droplet: Escalar un droplet
 		1. Conectarse por ssh
 		2. $ porweroff
 
+
+Panel de control de un droplet: Networking y Firewalls
+	
+	** Private network me permite crear droplets entres si y crear una red LAN
+
+
+Panel de control de un droplet: Backups y Snapshots
+
+	** Backups: El servicio de backups crea un snapshot del droplet automaticamente una vez a la semana. Este
+		servicio tiene un costo dependiendo del droplet.
+
+	** Snapshot: En una copia del droplet que se hace manualmente. Tambien tiene un costo dependiendo del tamaño del 
+		droplet.
+
+
+Panel de control de un droplet: Kernel
+	
+	** DO me permite cambiar el kernel del droplet, siempre y cuando el SO lo permita, esto sirve para mantener
+		una aplicación funcionando. Ejemplo: tengo una app que solo funciona con linux 2.0 entonces si yo llegase a 
+		actualizar el sistema operativo, DigitalOcean no actualizaria el kernel solo el SO.
+
+	** Recovery: “es importante que tengas en mente el modo recovery porque podría ayudarte a recuperar el droplet
+		en caso de un siniestro”
+
+
+Panel de control de un droplet: History, Destroy y Tags
+	
+
+Instalación de Nginx
+	
+	** sudo apt-get install nginx
+
+
+Instalación de MySQL
+	
+	** El comando: $ mysql_secure_installation permite asignar configuracion de seguridad para SUPER RECOMENDADAS.
+
+
+Instalacion de fpm-php
+	
+	
